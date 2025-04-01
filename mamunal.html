@@ -3,13 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Welcome to the official website of Dr. Mamunal's Chamber. Providing comprehensive and compassionate medical care.">
-    <meta name="keywords" content="medical practice, doctor, physician, healthcare, Dr. Mamunal, clinic, appointment booking">
-    <title>Dr. Mamunal's Chamber | Medical Practice</title>
+    <meta name="description" content="Dr. Mamunal's Chamber: Expert pediatric care with a focus on wellness and compassionate treatment for children of all ages.">
+    <meta name="keywords" content="pediatrician, child specialist, children's doctor, Dr. Mamunal, pediatric care, well-child visits, vaccinations, appointment booking">
+    <title>Dr. Mamunal's Chamber | Pediatric Specialist</title>
 
-    <!-- Font Awesome for Icons (Optional but recommended) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- Favicon (Optional - create a favicon.ico file and place it in the same directory) -->
+    <!-- Font Awesome for Icons -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts (Optional - Example: Poppins) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Favicon (Optional - create a favicon.ico file) -->
     <!-- <link rel="icon" href="favicon.ico" type="image/x-icon"> -->
 
     <style>
@@ -21,41 +27,49 @@
         }
 
         :root {
-            --primary-color: #007bff; /* Blue */
-            --secondary-color: #6c757d; /* Gray */
-            --light-color: #f8f9fa; /* Light Gray */
-            --dark-color: #343a40; /* Dark Gray */
-            --success-color: #28a745; /* Green */
-            --text-color: #333;
-            --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            --header-height: 70px;
+            /* Inspired by Medicare example, adapted for Pediatrics */
+            --primary-color: #0077cc; /* Professional Blue */
+            --accent-color: #e60000; /* Red accent (like Medicare example) */
+            --secondary-accent-color: #f39c12; /* Optional Orange for highlights */
+            --light-gray-color: #f8f9fa;
+            --medium-gray-color: #adb5bd;
+            --dark-gray-color: #495057;
+            --dark-color: #212529; /* Near Black */
+            --white-color: #ffffff;
+            --font-family: 'Poppins', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            --heading-font-weight: 600;
+            --body-font-weight: 400;
+            --header-height: 80px;
         }
 
         html {
-            scroll-behavior: smooth; /* Smooth scrolling for nav links */
-            scroll-padding-top: var(--header-height); /* Offset for fixed header */
+            scroll-behavior: smooth;
+            scroll-padding-top: var(--header-height);
         }
 
         body {
             font-family: var(--font-family);
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: #fff;
+            line-height: 1.7;
+            color: var(--dark-gray-color);
+            background-color: var(--white-color);
+            font-weight: var(--body-font-weight);
         }
 
         .container {
-            max-width: 1100px;
+            max-width: 1170px; /* Slightly wider container */
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 15px;
         }
 
         a {
             color: var(--primary-color);
             text-decoration: none;
+            transition: color 0.3s ease;
         }
 
         a:hover {
-            text-decoration: underline;
+            color: var(--accent-color);
+            text-decoration: none;
         }
 
         ul {
@@ -65,61 +79,76 @@
         img {
             max-width: 100%;
             height: auto;
-            display: block; /* Prevent bottom space */
+            display: block;
         }
+
+        /* Headings */
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: var(--heading-font-weight);
+            color: var(--dark-color);
+            line-height: 1.3;
+            margin-bottom: 0.5em; /* Consistent bottom margin */
+        }
+        h2 { font-size: 2.5rem; margin-bottom: 40px; text-align: center; }
+        h3 { font-size: 1.8rem; }
+        h4 { font-size: 1.4rem; }
 
         .section {
-            padding: 60px 0;
-        }
-
-        .section h2 {
-            text-align: center;
-            margin-bottom: 40px;
-            font-size: 2.5rem;
-            color: var(--dark-color);
+            padding: 80px 0; /* Increased padding */
         }
 
         .bg-light {
-            background-color: var(--light-color);
+            background-color: var(--light-gray-color);
         }
 
         .btn {
             display: inline-block;
             background-color: var(--primary-color);
-            color: #fff;
-            padding: 10px 20px;
-            border: none;
+            color: var(--white-color);
+            padding: 12px 30px;
+            border: 2px solid var(--primary-color);
             border-radius: 5px;
             cursor: pointer;
             font-size: 1rem;
-            transition: background-color 0.3s ease;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            text-align: center;
         }
 
         .btn:hover {
-            background-color: #0056b3;
-            text-decoration: none;
-            color: #fff; /* Ensure text remains white on hover */
+            background-color: #005fa3; /* Darker Blue */
+            border-color: #005fa3;
+            color: var(--white-color);
         }
 
-        /* Header Styles */
+        .btn-accent {
+            background-color: var(--accent-color);
+            border-color: var(--accent-color);
+        }
+         .btn-accent:hover {
+             background-color: #b30000; /* Darker Red */
+             border-color: #b30000;
+         }
+
+        /* Header Styles - Inspired by Medicare Example */
         #header {
-            background-color: #fff;
-            color: var(--dark-color);
-            padding: 0;
-            position: fixed; /* Fixed Header */
+            background-color: var(--white-color);
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Subtle shadow */
             height: var(--header-height);
+            display: flex;
+            align-items: center;
         }
 
         .header-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            height: 100%;
+            width: 100%;
         }
 
         .logo {
@@ -128,479 +157,341 @@
         }
 
         .logo-icon {
-            font-size: 2rem;
-            color: var(--primary-color);
+            /* Using a Font Awesome icon as placeholder - replace with <img> if needed */
+            font-size: 2.5rem; /* Adjust size as needed */
+            color: var(--primary-color); /* Logo color */
             margin-right: 10px;
+        }
+        /* Add CSS for .logo img if you use an image */
+
+        .site-title-container {
+             display: flex;
+             align-items: center; /* Align icon and text */
+             gap: 10px;
         }
 
         .site-title {
-            font-size: 1.5rem;
-            font-weight: bold;
+            font-size: 1.8rem;
+            font-weight: 700;
             color: var(--dark-color);
+            letter-spacing: 1px;
         }
+        /* Remove subtitle or style differently if needed */
 
         #main-nav ul {
             display: flex;
+            align-items: center;
         }
 
         #main-nav li {
-            margin-left: 20px;
+            margin-left: 30px; /* Spacing like example */
         }
 
         #main-nav a {
             color: var(--dark-color);
             font-weight: 500;
-            padding: 5px 0;
+            padding: 10px 0; /* Vertical padding for larger click area */
             position: relative;
-            transition: color 0.3s ease;
+            font-size: 1rem;
+            text-transform: uppercase; /* Like example */
+            letter-spacing: 0.5px;
         }
-         #main-nav a:hover {
-             color: var(--primary-color);
-             text-decoration: none;
+         #main-nav a:hover,
+         #main-nav a.active { /* Style for active/hover */
+             color: var(--accent-color); /* Red hover like example */
          }
 
-        #main-nav a::after {
+        #main-nav a::after { /* Underline like example */
             content: '';
             position: absolute;
             width: 0;
             height: 2px;
-            bottom: -2px;
+            bottom: -2px; /* Adjust position */
             left: 0;
-            background-color: var(--primary-color);
+            background-color: var(--accent-color); /* Red underline */
             transition: width 0.3s ease;
         }
 
         #main-nav a:hover::after,
-        #main-nav a.active::after { /* Add active class via JS if needed */
+        #main-nav a.active::after {
             width: 100%;
         }
 
         #menu-toggle {
-            display: none; /* Hide hamburger by default */
+            display: none;
             background: none;
             border: none;
-            font-size: 1.8rem;
+            font-size: 2rem;
             cursor: pointer;
             color: var(--dark-color);
         }
 
         /* Main Content Padding */
         main {
-            padding-top: var(--header-height); /* Avoid content overlap */
+            padding-top: var(--header-height);
         }
 
-        /* Hero Slideshow */
-        .slideshow-container {
-            position: relative;
-            max-width: 100%; /* Full width */
-            margin: auto;
-            overflow: hidden; /* Hide parts of images if needed */
-            background-color: var(--secondary-color); /* Fallback background */
+        /* Hero Section - Layout Inspired by Medicare Example */
+        #hero {
+            background-color: var(--white-color); /* Clean white background */
+            padding: 60px 0;
+            border-bottom: 1px solid #eee; /* Subtle separator */
         }
+        .hero-content {
+            display: flex;
+            align-items: center;
+            gap: 60px; /* Space between image and text */
+            flex-wrap: wrap; /* Wrap on smaller screens */
+        }
+        .hero-image {
+            flex: 1 1 40%; /* Takes up ~40% width, allows shrinking */
+            max-width: 450px; /* Max width for image */
+            margin: 0 auto; /* Center when wrapped */
+        }
+         .hero-image img {
+             border-radius: 8px; /* Optional subtle rounding */
+             box-shadow: 0 10px 25px rgba(0,0,0,0.1); /* Soft shadow */
+         }
 
-        .slide {
-            display: none; /* Hidden by default */
-            width: 100%;
-            text-align: center; /* Center image if smaller than container */
-            position: relative; /* For caption */
-            animation-name: fade;
-            animation-duration: 1.5s;
+        .hero-text {
+            flex: 1 1 55%; /* Takes up ~55% width */
         }
+        .hero-text .sub-heading { /* "Introducing..." style */
+             display: block;
+             color: var(--dark-gray-color);
+             font-size: 0.9rem;
+             font-weight: 500;
+             margin-bottom: 10px;
+             text-transform: uppercase;
+             letter-spacing: 1px;
+             position: relative;
+             padding-left: 50px; /* Space for line */
+        }
+         .hero-text .sub-heading::before { /* Red line like example */
+             content: '';
+             position: absolute;
+             left: 0;
+             top: 50%;
+             transform: translateY(-50%);
+             width: 40px;
+             height: 2px;
+             background-color: var(--accent-color);
+         }
 
-        .slide img {
-            width: 100%; /* Make image fill container width */
-            height: 500px; /* Fixed height for consistency */
-            object-fit: cover; /* Cover the area, crop if needed */
-            vertical-align: middle; /* Align image properly */
+        .hero-text h1 {
+            font-size: 3.5rem; /* Large headline */
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
         }
-
-        @keyframes fade {
-            from { opacity: .4 }
-            to { opacity: 1 }
+        .hero-text h1 .highlight { /* Colored text part */
+            color: var(--accent-color); /* Red highlight like example */
         }
-
-        .slide-caption {
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            color: white;
-            background-color: rgba(0, 0, 0, 0.6);
-            padding: 10px 25px;
-            border-radius: 5px;
-            font-size: 1.5rem;
-            text-align: center;
+        .hero-text p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            color: var(--dark-gray-color);
         }
-
-        /* Slideshow Next & previous buttons */
-        .prev, .next {
-          cursor: pointer;
-          position: absolute;
-          top: 50%;
-          width: auto;
-          margin-top: -22px;
-          padding: 16px;
-          color: white;
-          font-weight: bold;
-          font-size: 18px;
-          transition: 0.6s ease;
-          border-radius: 0 3px 3px 0;
-          user-select: none;
-          background-color: rgba(0,0,0,0.3);
-          z-index: 2; /* Ensure buttons are above images */
-        }
-        .next {
-          right: 0;
-          border-radius: 3px 0 0 3px;
-        }
-        .prev:hover, .next:hover {
-          background-color: rgba(0,0,0,0.8);
+        .hero-cta {
+             margin-top: 30px;
         }
 
         /* About Section */
+        #about {
+             background-color: var(--light-gray-color);
+        }
+        /* Use a similar two-column layout if desired, or a different one */
         .about-content {
-            display: flex;
-            flex-wrap: wrap; /* Allow wrapping on smaller screens */
-            gap: 40px;
-            align-items: center;
+             display: flex;
+             flex-wrap: wrap;
+             gap: 40px;
+             align-items: center;
         }
-
-        .about-image {
-           flex: 1; /* Take up available space */
-           min-width: 250px; /* Minimum width before wrapping */
-           text-align: center; /* Center image when wrapped */
-        }
-
-        .about-image img {
-            border-radius: 50%;
-            max-width: 300px;
-            width: 100%; /* Responsive width */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin: 0 auto; /* Center image */
-        }
-
-        .about-text {
-            flex: 2; /* Take up more space */
-            min-width: 300px; /* Minimum width */
-        }
-
-        .about-text h3 {
-            color: var(--primary-color);
-            margin-bottom: 15px;
-            font-size: 1.8rem;
-        }
-        .about-text h4 {
-            margin-top: 20px;
-            margin-bottom: 10px;
-            color: var(--dark-color);
-            font-size: 1.4rem;
-        }
-
-        .about-text ul {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        .about-text li {
-            margin-bottom: 8px;
-            display: flex;
-            align-items: center;
-        }
-
-        .about-text li i {
-            color: var(--primary-color);
-            margin-right: 10px;
-            width: 20px; /* Align icons */
-            text-align: center;
-        }
+         .about-text { flex: 1; }
+         .about-image { flex: 1; text-align: center; }
+         .about-image img { max-width: 400px; border-radius: 50%; } /* Example style */
 
 
         /* Services Section */
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+            gap: 40px;
         }
 
         .service-item {
-            background-color: #fff;
-            padding: 30px;
-            text-align: center;
+            background-color: var(--white-color);
+            padding: 40px;
+            border: 1px solid #eee;
             border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            text-align: center;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .service-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
         }
 
         .service-icon {
-            font-size: 3rem;
+            font-size: 3.5rem;
             color: var(--primary-color);
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
 
         .service-item h3 {
-            margin-bottom: 10px;
-            font-size: 1.3rem;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
             color: var(--dark-color);
         }
 
         /* Contact Section */
         .contact-content {
             display: grid;
-            grid-template-columns: 1fr; /* Default to single column */
-            gap: 40px;
+            grid-template-columns: 1fr; /* Default */
+            gap: 50px;
         }
-         /* Use media query for two columns on larger screens */
-         @media (min-width: 768px) {
+         @media (min-width: 992px) {
             .contact-content {
-                grid-template-columns: 1fr 1fr;
+                grid-template-columns: 1fr 1.5fr; /* Details | Form */
             }
          }
 
-
-        .contact-details h3, .contact-form h3 {
-            margin-bottom: 20px;
-            color: var(--primary-color);
-            font-size: 1.6rem;
-        }
-
-        .contact-details p {
-            margin-bottom: 15px;
-            display: flex;
-            align-items: flex-start; /* Align icon with first line */
-            line-height: 1.8;
-        }
-
         .contact-details i {
             color: var(--primary-color);
-            margin-right: 10px;
-            width: 20px;
+            margin-right: 15px;
+            font-size: 1.2rem;
+            width: 25px;
             text-align: center;
-            margin-top: 4px; /* Adjust vertical alignment */
         }
-
-        .map-container {
-            margin-top: 30px;
-        }
-        .map-container h3 {
-            margin-bottom: 10px;
-            font-size: 1.4rem;
-            color: var(--dark-color);
-        }
-
-        .map-container iframe {
-            border-radius: 5px;
-            border: 0; /* Ensure no default border */
-            width: 100%; /* Ensure iframe takes full width */
-            height: 300px;
-        }
-
-        /* Form Styles (Contact & Booking) */
-        .form-group {
+         .contact-details p {
+            display: flex;
+            align-items: center;
             margin-bottom: 20px;
         }
+        .map-container { margin-top: 30px; }
+        .map-container iframe { border-radius: 5px; border: 0; width: 100%; height: 350px; }
 
+        /* Forms */
+        .form-group { margin-bottom: 25px; }
         .form-group label {
             display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--dark-color);
         }
-
-        .form-group input[type="text"],
-        .form-group input[type="email"],
-        .form-group input[type="tel"],
-        .form-group input[type="date"],
-        .form-group input[type="time"],
-        .form-group select,
-        .form-group textarea {
+        .form-group input, .form-group select, .form-group textarea {
             width: 100%;
-            padding: 12px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
+            padding: 14px;
+            border: 1px solid #ced4da; /* Standard Bootstrap-like border */
+            border-radius: 4px;
             font-size: 1rem;
             font-family: inherit;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
         }
+         .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+             border-color: var(--primary-color);
+             outline: 0;
+             box-shadow: 0 0 0 0.2rem rgba(0, 119, 204, 0.25); /* Focus ring like Bootstrap */
+         }
+        .form-group textarea { resize: vertical; min-height: 120px; }
 
-        /* Specific styling for date/time inputs */
-        .form-group input[type="date"],
-        .form-group input[type="time"] {
-            /* May need browser-specific styling for consistency */
-            appearance: none; /* Try to remove default styling */
-            -webkit-appearance: none;
-            -moz-appearance: none;
-        }
-
-
-        .form-group textarea {
-            resize: vertical;
-        }
-
-        /* Booking Form Grid */
+        /* Booking Form Specific Grid */
         #bookingForm .form-grid {
             display: grid;
-            grid-template-columns: 1fr; /* Default single column */
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
         }
-        /* Two columns on larger screens */
-         @media (min-width: 768px) {
-            #bookingForm .form-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            #bookingForm .form-group-full {
-                grid-column: 1 / -1; /* Span full width only on larger screens */
-            }
+         #bookingForm .form-group-full {
+            grid-column: 1 / -1; /* Span full width */
+         }
+         .booking-submit-area {
+            text-align: center;
+            margin-top: 20px;
+             grid-column: 1 / -1; /* Span full width if inside grid */
          }
 
 
         .confirmation-message {
-            margin-top: 15px;
-            color: var(--success-color);
-            font-weight: bold;
+            margin-top: 20px;
+            color: #006400; /* Dark Green */
+            font-weight: 500;
             text-align: center;
-            padding: 10px;
-            background-color: #e9f7ef;
-            border: 1px solid var(--success-color);
+            padding: 12px;
+            background-color: #e6f9e6;
+            border: 1px solid #b3e0b3;
             border-radius: 5px;
         }
 
         /* Footer */
         #footer {
             background-color: var(--dark-color);
-            color: #ccc;
+            color: var(--medium-gray-color);
             text-align: center;
-            padding: 20px 0;
-            margin-top: 40px; /* Ensure space before footer */
+            padding: 40px 0;
+            margin-top: 60px;
+            font-size: 0.95rem;
         }
-
-        #footer p {
-            margin: 5px 0;
-        }
-        #footer small {
-            color: #aaa;
-        }
+        #footer p { margin: 5px 0; }
+        #footer a { color: var(--light-gray-color); }
+        #footer a:hover { color: var(--primary-color); }
 
         /* Accessibility */
-        /* Add focus styles for keyboard navigation */
         a:focus, button:focus, input:focus, textarea:focus, select:focus {
-            outline: 2px solid var(--primary-color);
-            outline-offset: 2px;
+            /* Rely on browser default or the form input focus styles */
+             /* You can add a specific outline if preferred */
+             /* outline: 2px solid var(--secondary-accent-color); */
+             /* outline-offset: 2px; */
         }
-        #menu-toggle:focus {
-            outline: none; /* Remove default outline if custom styling is preferred */
-            border: 2px solid var(--primary-color); /* Example custom focus */
-            border-radius: 3px;
-        }
-
 
         /* Responsive Design */
-        @media (max-width: 768px) {
-            .site-title {
-                font-size: 1.3rem;
-            }
-             .logo-icon {
-                font-size: 1.8rem;
-            }
+        @media (max-width: 991px) {
+            h1 { font-size: 2.8rem; }
+            h2 { font-size: 2.1rem; }
+            .hero-content { gap: 40px; }
+            .hero-image { flex-basis: 100%; max-width: 400px; } /* Stack hero */
+            .hero-text { flex-basis: 100%; text-align: center; }
+             .hero-text .sub-heading { padding-left: 0; text-align: center; }
+             .hero-text .sub-heading::before { display: none; } /* Hide line on mobile */
+            .services-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+        }
 
-            #menu-toggle {
-                display: block; /* Show hamburger */
-            }
+        @media (max-width: 767px) {
+            :root { --header-height: 70px; }
+            .container { padding: 0 15px; }
+
+            #menu-toggle { display: block; }
+            .header-container { position: relative; }
+            #menu-toggle { position: absolute; right: 15px; top: 50%; transform: translateY(-50%); }
 
             #main-nav ul {
-                display: none; /* Hide nav links by default */
+                display: none;
                 flex-direction: column;
                 position: absolute;
                 top: var(--header-height);
                 left: 0;
                 width: 100%;
-                background-color: #fff;
-                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-                padding: 10px 0; /* Add padding when open */
+                background-color: var(--white-color);
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                padding: 10px 0;
+                border-top: 1px solid #eee;
             }
-             #main-nav ul.active { /* Class added by JS */
-                 display: flex;
-             }
-
-            #main-nav li {
-                margin: 0;
-                text-align: center;
-            }
-
+             #main-nav ul.active { display: flex; }
+            #main-nav li { margin: 0; width: 100%; }
             #main-nav a {
                 display: block;
-                padding: 15px 20px; /* Larger tap targets */
-                border-bottom: 1px solid #eee;
+                padding: 15px 20px;
+                text-align: center;
+                border-bottom: 1px solid #f1f1f1;
             }
-             #main-nav a::after {
-                 display: none; /* Hide underline effect on mobile nav */
-             }
-              #main-nav li:last-child a {
-                  border-bottom: none;
-              }
+             #main-nav a::after { display: none; } /* No underline on mobile */
+             #main-nav li:last-child a { border-bottom: none; }
 
-            .slide img {
-                height: 350px; /* Adjust slideshow height */
-            }
-            .slide-caption {
-                font-size: 1.2rem;
-                padding: 8px 15px;
-            }
-
-            .about-content {
-                flex-direction: column; /* Stack image and text */
-                gap: 20px;
-            }
-            .about-image {
-                 max-width: 250px; /* Adjust image size */
-                 margin-bottom: 20px;
-            }
-            .about-text h3 { font-size: 1.6rem; }
-            .about-text h4 { font-size: 1.3rem; }
-
-            .section h2 {
-                font-size: 2rem;
-            }
-
-
+            h1 { font-size: 2.2rem; }
+            h2 { font-size: 1.8rem; }
+            .section { padding: 60px 0; }
+            .contact-content { grid-template-columns: 1fr; } /* Ensure single column */
         }
-
-         @media (max-width: 480px) {
-            .container {
-                padding: 0 15px;
-            }
-            .site-title {
-                font-size: 1.1rem;
-            }
-            .logo-icon {
-                font-size: 1.6rem;
-            }
-
-             .slide img {
-                height: 250px; /* Further adjust slideshow height */
-            }
-            .slide-caption {
-                font-size: 1rem;
-                bottom: 10px;
-            }
-            .prev, .next {
-                padding: 10px;
-                font-size: 16px;
-            }
-
-             .form-group input[type="text"],
-             .form-group input[type="email"],
-             .form-group input[type="tel"],
-             .form-group input[type="date"],
-             .form-group input[type="time"],
-             .form-group select,
-             .form-group textarea {
-                 padding: 10px; /* Slightly smaller padding on small screens */
-             }
-
-         }
     </style>
 </head>
 <body>
@@ -608,17 +499,19 @@
     <!-- Header Section -->
     <header id="header">
         <div class="container header-container">
-            <div class="logo">
-                <!-- Placeholder Logo - Replace <i> with <img> if you have a logo file -->
-                <i class="fas fa-clinic-medical logo-icon" aria-hidden="true"></i>
-                <span class="site-title">Dr. Mamunal's Chamber</span>
-            </div>
+            <a href="#hero" class="logo" aria-label="Dr. Mamunal's Chamber Home">
+                 <div class="site-title-container">
+                     <!-- Placeholder Icon - Replace with <img> if needed -->
+                     <i class="fa-solid fa-heart-pulse logo-icon" aria-hidden="true"></i>
+                     <span class="site-title">DR MAMUNAL</span> <!-- Simple Title -->
+                 </div>
+            </a>
             <nav id="main-nav">
                 <button id="menu-toggle" aria-label="Toggle Menu" aria-expanded="false" aria-controls="nav-links">
                     <i class="fas fa-bars" aria-hidden="true"></i>
                 </button>
                 <ul id="nav-links" role="menu">
-                    <li role="none"><a href="#hero" role="menuitem">Home</a></li>
+                    <li role="none"><a href="#hero" role="menuitem" class="active">Home</a></li>
                     <li role="none"><a href="#about" role="menuitem">About</a></li>
                     <li role="none"><a href="#services" role="menuitem">Services</a></li>
                     <li role="none"><a href="#contact" role="menuitem">Contact</a></li>
@@ -629,49 +522,47 @@
     </header>
 
     <main>
-        <!-- Hero Section - Photo Slideshow -->
-        <section id="hero" class="slideshow-container" aria-roledescription="carousel" aria-label="Photo Slideshow of Clinic">
-            <div class="slide fade" role="group" aria-roledescription="slide" aria-label="1 of 3">
-                <!-- Placeholder Image 1 - Replace src -->
-                <img src="https://via.placeholder.com/1200x500/007bff/ffffff?text=Comfortable+Waiting+Area" alt="Comfortable Clinic Waiting Area">
-                <div class="slide-caption">Compassionate Care for Your Family</div>
+        <!-- Hero Section -->
+        <section id="hero" aria-labelledby="hero-heading">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-image shadow-none">
+                        <!-- Placeholder image - Replace with a high-quality, friendly photo -->
+                        <img class="!shadow-none" src="./image copy 3.png">
+                    </div>
+                    <div class="hero-text">
+                        <span class="sub-heading">Welcome to Dr. Mamunal's Chamber</span>
+                        <h1 id="hero-heading">Dedicated Care for <span class="highlight">Growing Smiles</span></h1>
+                        <p>Providing comprehensive and compassionate pediatric healthcare for infants, children, and adolescents. Your child's health and well-being are our top priorities.</p>
+                        <div class="hero-cta">
+                            <a href="#booking" class="btn btn-accent">Book Appointment</a>
+                            <a href="#services" class="btn" style="margin-left: 15px; background: transparent; border-color: var(--primary-color); color: var(--primary-color);">Our Services</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="slide fade" role="group" aria-roledescription="slide" aria-label="2 of 3">
-                <!-- Placeholder Image 2 - Replace src -->
-                <img src="https://via.placeholder.com/1200x500/6c757d/ffffff?text=Modern+Medical+Equipment" alt="Modern Medical Equipment">
-                <div class="slide-caption">State-of-the-Art Facilities</div>
-            </div>
-            <div class="slide fade" role="group" aria-roledescription="slide" aria-label="3 of 3">
-                <!-- Placeholder Image 3 - Replace src -->
-                <img src="https://via.placeholder.com/1200x500/28a745/ffffff?text=Friendly+Medical+Staff" alt="Friendly Medical Staff">
-                <div class="slide-caption">Experienced and Caring Team</div>
-            </div>
-            <!-- Next and previous buttons -->
-            <a class="prev" onclick="changeSlide(-1)" aria-label="Previous Slide">❮</a>
-            <a class="next" onclick="changeSlide(1)" aria-label="Next Slide">❯</a>
         </section>
 
-        <!-- About Section -->
-        <section id="about" class="section" aria-labelledby="about-heading">
+         <!-- About Section -->
+         <section id="about" class="section" aria-labelledby="about-heading">
             <div class="container">
-                <h2 id="about-heading">About Us</h2>
+                <h2 id="about-heading">About Dr. Mamunal</h2>
                 <div class="about-content">
-                    <div class="about-image">
-                        <!-- Placeholder Doctor Photo - Replace src -->
-                        <img src="https://via.placeholder.com/300x300/cccccc/ffffff?text=Dr.+Mamunal" alt="Dr. Mamunal - Head Physician">
+                     <div class="about-text">
+                        <h3>Experienced & Caring Pediatrician</h3>
+<p>"ডাঃ মোঃ মামুনাল হক - শিশু স্বাস্থ্যের নির্ভরযোগ্য নাম। নবজাতক থেকে কিশোর, সকল বয়সী শিশুর স্বাস্থ্যসেবার ক্ষেত্রে ডাঃ মামুনাল হকের রয়েছে অসামান্য দক্ষতা ও বিস্তৃত অভিজ্ঞতা। ঢাকা শিশু হাসপাতালের সাবেক মেডিকেল অফিসার হিসেবে তিনি শিশু স্বাস্থ্যের সর্বোচ্চ মান নিশ্চিত করতে প্রতিশ্রুতিবদ্ধ। বিশেষজ্ঞ সেবা: **নবজাতকের যত্ন ও পরিচর্যা **শিশু ও কিশোর-কিশোরীর স্বাস্থ্য সমস্যা **বৃদ্ধি ও বিকাশ পর্যবেক্ষণ **পুষ্টি পরামর্শ Dr. Md. Mamunal Haque, a renowned pediatrician with extensive experience in newborn, child, and adolescent care, offers expert consultations. Having served at Dhaka Shishu Hospital, he brings a wealth of knowledge to his practice. Trust Dr. Mamunal's expertise for the health and well-being of your child."</p>
+<br>
+<h4>Our Commitment:</h4>
+                         <ul>
+                             <li><i class="fas fa-check-circle" style="color: var(--primary-color); margin-right: 8px;"></i> Comprehensive Well-Child Visits</li>
+                             <li><i class="fas fa-check-circle" style="color: var(--primary-color); margin-right: 8px;"></i> Timely Sick Care & Diagnosis</li>
+                             <li><i class="fas fa-check-circle" style="color: var(--primary-color); margin-right: 8px;"></i> Emphasis on Preventive Health & Vaccinations</li>
+                              <li><i class="fas fa-check-circle" style="color: var(--primary-color); margin-right: 8px;"></i> Clear Communication with Parents</li>
+                         </ul>
                     </div>
-                    <div class="about-text">
-                        <h3>Meet Dr. Mamunal</h3>
-                        <p>Dr. Mamunal [Assumed: MBBS, FCPS or relevant degree] is a dedicated and experienced general practitioner with over [e.g., 10] years of practice. Committed to providing high-quality, patient-centered healthcare, Dr. Mamunal focuses on preventive care and building lasting relationships with patients. [He/She] stays updated with the latest medical advancements to ensure the best possible outcomes.</p>
-                        <h4>Our Mission</h4>
-                        <p>To provide comprehensive, accessible, and compassionate healthcare services to our community, promoting wellness and improving quality of life.</p>
-                        <h4>Our Values</h4>
-                        <ul>
-                            <li><i class="fas fa-heartbeat" aria-hidden="true"></i> Compassion</li>
-                            <li><i class="fas fa-user-md" aria-hidden="true"></i> Excellence</li>
-                            <li><i class="fas fa-handshake" aria-hidden="true"></i> Integrity</li>
-                            <li><i class="fas fa-users" aria-hidden="true"></i> Patient-Centered Care</li>
-                        </ul>
+                     <div class="about-image">
+                        <!-- Placeholder: Replace with another professional image or relevant graphic -->
+                        <img class="!max-w-72 lg:!max-w-screen-sm" src="./image copy.png" alt="Illustration of a child-friendly clinic space">
                     </div>
                 </div>
             </div>
@@ -680,37 +571,38 @@
         <!-- Services Section -->
         <section id="services" class="section bg-light" aria-labelledby="services-heading">
             <div class="container">
-                <h2 id="services-heading">Our Services</h2>
+                <h2 id="services-heading">Our Pediatric Services</h2>
                 <div class="services-grid">
+                    <!-- Repeat .service-item for each service -->
                     <article class="service-item">
-                        <i class="fas fa-stethoscope service-icon" aria-hidden="true"></i>
-                        <h3>General Consultations</h3>
-                        <p>Comprehensive health assessments, diagnosis, and treatment plans for various acute and chronic conditions.</p>
+                        <i class="fa-solid fa-baby service-icon" aria-hidden="true"></i>
+                        <h3>Well-Child Exams</h3>
+                        <p>Routine checkups to track growth, development, and administer scheduled immunizations.</p>
                     </article>
                     <article class="service-item">
-                        <i class="fas fa-syringe service-icon" aria-hidden="true"></i>
-                        <h3>Vaccinations & Immunizations</h3>
-                        <p>Administering essential vaccines for children and adults according to recommended schedules.</p>
+                        <i class="fa-solid fa-syringe service-icon" aria-hidden="true"></i>
+                        <h3>Vaccinations</h3>
+                        <p>Complete immunization services following the recommended national schedules.</p>
                     </article>
                     <article class="service-item">
-                        <i class="fas fa-notes-medical service-icon" aria-hidden="true"></i>
-                        <h3>Health Check-ups</h3>
-                        <p>Preventive health screenings and regular check-ups to monitor health status and detect potential issues early.</p>
+                        <i class="fa-solid fa-thermometer service-icon" aria-hidden="true"></i>
+                        <h3>Sick Visits</h3>
+                        <p>Diagnosis and treatment for common childhood illnesses, fevers, coughs, and infections.</p>
                     </article>
                     <article class="service-item">
-                        <i class="fas fa-band-aid service-icon" aria-hidden="true"></i>
-                        <h3>Minor Procedures</h3>
-                        <p>Performing minor procedures like wound dressing, suture removal, and basic first aid.</p>
+                        <i class="fa-solid fa-lungs service-icon" aria-hidden="true"></i>
+                        <h3>Asthma & Allergy Care</h3>
+                        <p>Management plans for children with asthma, seasonal allergies, and food sensitivities.</p>
                     </article>
-                    <article class="service-item">
-                        <i class="fas fa-heart-pulse service-icon" aria-hidden="true"></i>
-                        <h3>Chronic Disease Management</h3>
-                        <p>Ongoing care and management plans for conditions like diabetes, hypertension, and asthma.</p>
+                     <article class="service-item">
+                        <i class="fa-solid fa-puzzle-piece service-icon" aria-hidden="true"></i>
+                        <h3>Developmental Screening</h3>
+                        <p>Monitoring milestones and providing early intervention support when needed.</p>
                     </article>
-                    <article class="service-item">
-                        <i class="fas fa-file-medical service-icon" aria-hidden="true"></i>
-                        <h3>Referrals</h3>
-                        <p>Coordinating care with specialists when necessary for advanced diagnosis or treatment.</p>
+                     <article class="service-item">
+                        <i class="fa-solid fa-school service-icon" aria-hidden="true"></i>
+                        <h3>School & Sports Physicals</h3>
+                        <p>Comprehensive physical examinations required for school enrollment and sports participation.</p>
                     </article>
                 </div>
             </div>
@@ -719,55 +611,52 @@
         <!-- Contact Section -->
         <section id="contact" class="section" aria-labelledby="contact-heading">
             <div class="container">
-                <h2 id="contact-heading">Contact Us</h2>
+                <h2 id="contact-heading">Contact Information</h2>
                 <div class="contact-content">
                     <div class="contact-details">
-                        <h3>Get In Touch</h3>
-                        <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> <strong>Address:</strong> [Enter Full Clinic Address Here - e.g., 123 Health St, Wellness City, MedState 12345]</p>
-                        <p><i class="fas fa-phone" aria-hidden="true"></i> <strong>Phone:</strong> <a href="tel:+1234567890">[Enter Phone Number - e.g., (123) 456-7890]</a></p>
-                        <p><i class="fas fa-envelope" aria-hidden="true"></i> <strong>Email:</strong> <a href="mailto:info@drmamunalchamber.com">[Enter Email Address - e.g., info@drmamunalchamber.com]</a></p>
-                        <h4>Opening Hours</h4>
-                        <p>Monday - Friday: [e.g., 9:00 AM - 5:00 PM]</p>
-                        <p>Saturday: [e.g., 10:00 AM - 1:00 PM]</p>
+                        <h3>Clinic Details</h3>
+                        <p><i class="fa-solid fa-location-dot" aria-hidden="true"></i> <strong>Address:</strong> [Enter Full Clinic Address - Verify from Google Maps link if possible]</p>
+                        <p><i class="fa-solid fa-phone" aria-hidden="true"></i> <strong>Phone:</strong> <a href="tel:+1234567890">[Enter Clinic Phone Number]</a></p>
+                        <p><i class="fa-solid fa-envelope" aria-hidden="true"></i> <strong>Email:</strong> <a href="mailto:info@drmamunal.com">[Enter Clinic Email Address]</a></p>
+                        <h4><i class="fa-regular fa-clock" aria-hidden="true"></i> Hours</h4>
+                        <p>Mon - Fri: [e.g., 9:00 AM - 5:00 PM]</p>
+                        <p>Saturday: [e.g., 9:00 AM - 12:00 PM]</p>
                         <p>Sunday: Closed</p>
 
-                        <!-- Google Map Embed -->
                         <div class="map-container">
-                            <h3>Our Location</h3>
-                            <!-- IMPORTANT: Replace the src with the correct embed URL from Google Maps for the actual clinic address -->
+                            <h4>Location Map</h4>
                             <iframe
                                 src="https://maps.google.com/maps?q=Dr%20Mamunal's%20Chamber&t=&z=15&ie=UTF8&iwloc=&output=embed"
-                                style="border:0;"
-                                allowfullscreen=""
-                                loading="lazy"
-                                referrerpolicy="no-referrer-when-downgrade"
-                                title="Clinic Location Map">
+                                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                                title="Map showing location of Dr Mamunal's Chamber">
                             </iframe>
-                            <p><small>Note: Map shows approximate location based on name. Please verify the address or update the map link.</small></p>
+                             <p style="margin-top: 10px;"><small>Map data from Google based on clinic name.</small></p>
                         </div>
                     </div>
-                    <div class="contact-form">
-                        <h3>Send Us a Message</h3>
-                        <form id="contactForm" action="[YOUR_SERVER_ENDPOINT]" method="POST"> <!-- Replace with your form processing URL -->
+                    <div class="contact-form-container">
+                         <h3>Send a General Inquiry</h3>
+                         <p>For non-urgent questions, please use the form below.</p>
+                        <form id="contactForm" action="[YOUR_SERVER_ENDPOINT]" method="POST">
                             <div class="form-group">
-                                <label for="name">Name:</label>
-                                <input type="text" id="name" name="name" required autocomplete="name">
+                                <label for="contact-name">Your Name:</label>
+                                <input type="text" id="contact-name" name="name" required>
                             </div>
                             <div class="form-group">
-                                <label for="email">Email:</label>
-                                <input type="email" id="email" name="email" required autocomplete="email">
+                                <label for="contact-email">Your Email:</label>
+                                <input type="email" id="contact-email" name="email" required>
                             </div>
                             <div class="form-group">
-                                <label for="subject">Subject:</label>
-                                <input type="text" id="subject" name="subject">
+                                <label for="contact-subject">Subject:</label>
+                                <input type="text" id="contact-subject" name="subject" required>
                             </div>
                             <div class="form-group">
-                                <label for="message">Message:</label>
-                                <textarea id="message" name="message" rows="5" required></textarea>
+                                <label for="contact-message">Message:</label>
+                                <textarea id="contact-message" name="message" rows="6" required></textarea>
                             </div>
-                            <button type="submit" class="btn">Send Message</button>
+                            <button type="submit" class="btn btn-accent">Send Message</button>
                             <p id="contact-confirmation" class="confirmation-message" style="display: none;"></p>
                         </form>
+                         <p style="margin-top: 15px; font-size: 0.9rem;"><small>Please call for urgent matters or appointments.</small></p>
                     </div>
                 </div>
             </div>
@@ -776,63 +665,66 @@
         <!-- Booking Section -->
         <section id="booking" class="section bg-light" aria-labelledby="booking-heading">
             <div class="container">
-                <h2 id="booking-heading">Book an Appointment</h2>
-                <form id="bookingForm" action="[YOUR_BOOKING_ENDPOINT]" method="POST"> <!-- Replace with your booking processing URL -->
+                <h2 id="booking-heading">Request Appointment</h2>
+                <p style="text-align: center; max-width: 750px; margin: 0 auto 40px auto;">Use this form to request an appointment. Our staff will contact you within one business day to confirm your date and time.</p>
+                <form id="bookingForm" action="[YOUR_BOOKING_ENDPOINT]" method="POST">
                     <div class="form-grid">
                         <div class="form-group">
-                            <label for="booking-name">Your Name:</label>
-                            <input type="text" id="booking-name" name="booking-name" required autocomplete="name">
+                            <label for="booking-parent-name">Parent/Guardian Name:</label>
+                            <input type="text" id="booking-parent-name" name="parentName" required>
                         </div>
                         <div class="form-group">
-                            <label for="booking-phone">Phone Number:</label>
-                            <input type="tel" id="booking-phone" name="booking-phone" required autocomplete="tel">
+                            <label for="booking-child-name">Child's Full Name:</label>
+                            <input type="text" id="booking-child-name" name="childName" required>
                         </div>
                         <div class="form-group">
-                            <label for="booking-service">Select Service:</label>
-                            <select id="booking-service" name="booking-service" required>
-                                <option value="">-- Select Service --</option>
-                                <option value="General Consultation">General Consultation</option>
-                                <option value="Vaccination">Vaccination/Immunization</option>
-                                <option value="Health Check-up">Health Check-up</option>
-                                <option value="Minor Procedure">Minor Procedure</option>
-                                <option value="Follow-up">Follow-up Appointment</option>
+                            <label for="booking-dob">Child's Date of Birth:</label>
+                            <input type="date" id="booking-dob" name="dob" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="booking-phone">Contact Phone:</label>
+                            <input type="tel" id="booking-phone" name="phone" required>
+                        </div>
+                         <div class="form-group">
+                            <label for="booking-email">Contact Email:</label>
+                            <input type="email" id="booking-email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="booking-service-type">Reason for Visit:</label>
+                            <select id="booking-service-type" name="serviceType" required>
+                                <option value="">-- Please Select --</option>
+                                <option value="Well-Child Exam">Well-Child Exam</option>
+                                <option value="Sick Visit">Sick Visit</option>
+                                <option value="Vaccination Only">Vaccination Only</option>
+                                <option value="Follow-up">Follow-up</option>
+                                <option value="New Patient">New Patient Consultation</option>
+                                <option value="Physical Exam">School/Sports Physical</option>
+                                <option value="Other">Other</option>
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="booking-date">Preferred Date:</label>
-                            <!-- Add min attribute to prevent past dates -->
-                            <input type="date" id="booking-date" name="booking-date" required >
+                            <label for="booking-pref-date">Preferred Date:</label>
+                            <input type="date" id="booking-pref-date" name="preferredDate" required>
                         </div>
                         <div class="form-group">
-                             <label for="booking-time">Preferred Time Slot:</label>
-                             <!-- Use select for predefined time slots for better control -->
-                             <select id="booking-time" name="booking-time" required>
-                                <option value="">-- Select Time --</option>
-                                <!-- Populate with available time slots based on opening hours -->
-                                <option value="09:00">09:00 AM</option>
-                                <option value="09:30">09:30 AM</option>
-                                <option value="10:00">10:00 AM</option>
-                                <option value="10:30">10:30 AM</option>
-                                <option value="11:00">11:00 AM</option>
-                                <option value="11:30">11:30 AM</option>
-                                <option value="14:00">02:00 PM</option>
-                                <option value="14:30">02:30 PM</option>
-                                <option value="15:00">03:00 PM</option>
-                                <option value="15:30">03:30 PM</option>
-                                <option value="16:00">04:00 PM</option>
-                                <option value="16:30">04:30 PM</option>
-                                <!-- Add Saturday slots if applicable -->
+                            <label for="booking-pref-time">Preferred Time:</label>
+                             <select id="booking-pref-time" name="preferredTime" required>
+                                <option value="">-- Select Preference --</option>
+                                <option value="Morning">Morning</option>
+                                <option value="Afternoon">Afternoon</option>
+                                <option value="Flexible">Any Time Available</option>
                              </select>
                         </div>
                          <div class="form-group form-group-full">
-                            <label for="booking-notes">Additional Notes (Optional):</label>
-                            <textarea id="booking-notes" name="booking-notes" rows="3"></textarea>
+                            <label for="booking-notes">Additional Information (Optional):</label>
+                            <textarea id="booking-notes" name="notes" rows="4"></textarea>
                         </div>
-                    </div>
-                    <button type="submit" class="btn">Request Booking</button>
+                         <div class="booking-submit-area">
+                            <button type="submit" class="btn btn-accent">Submit Request</button>
+                         </div>
+                    </div> <!-- end form-grid -->
                     <p id="booking-confirmation" class="confirmation-message" style="display: none;"></p>
                 </form>
-                 <p style="text-align: center; margin-top: 20px;"><small>Please note: This form submits a booking request. We will contact you to confirm your appointment time.</small></p>
             </div>
         </section>
 
@@ -842,61 +734,12 @@
     <footer id="footer">
         <div class="container">
             <p>© <span id="current-year"></span> Dr. Mamunal's Chamber. All Rights Reserved.</p>
-            <p><small>Website made by Tanzim</small></p> <!-- Optional -->
-            <!-- Add links to privacy policy or terms if applicable -->
+            <!-- Add social media links or other info if needed -->
         </div>
     </footer>
 
     <script>
         // --- JavaScript ---
-
-        // --- Slideshow Logic ---
-        let slideIndex = 0;
-        let slideInterval;
-
-        // Function to display slides
-        function showSlides() {
-            let i;
-            let slides = document.getElementsByClassName("slide");
-            if (!slides.length) return; // Exit if no slides
-
-            // Hide all slides
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-
-            // Increment index, reset if it exceeds length
-            slideIndex++;
-            if (slideIndex > slides.length) { slideIndex = 1 }
-
-            // Display the current slide
-            slides[slideIndex - 1].style.display = "block";
-
-            // Restart the timer
-            clearTimeout(slideInterval);
-            slideInterval = setTimeout(showSlides, 5000); // Change image every 5 seconds
-        }
-
-        // Function to change slide manually (for prev/next buttons)
-        function changeSlide(n) {
-            clearTimeout(slideInterval); // Stop automatic slideshow
-            slideIndex += n;
-            let slides = document.getElementsByClassName("slide");
-             if (!slides.length) return;
-
-            if (slideIndex > slides.length) { slideIndex = 1 }
-            if (slideIndex < 1) { slideIndex = slides.length }
-
-            // Hide all slides
-            for (let i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-            // Display the correct slide
-            slides[slideIndex - 1].style.display = "block";
-
-             // Optionally restart the automatic timer after manual change
-             // slideInterval = setTimeout(showSlides, 5000);
-        }
 
         // --- Mobile Menu Toggle ---
         const menuToggle = document.getElementById('menu-toggle');
@@ -904,125 +747,114 @@
 
         if (menuToggle && navLinks) {
             menuToggle.addEventListener('click', () => {
-                navLinks.classList.toggle('active');
-                const isExpanded = navLinks.classList.contains('active');
-                menuToggle.setAttribute('aria-expanded', isExpanded);
+                const isActive = navLinks.classList.toggle('active');
+                menuToggle.setAttribute('aria-expanded', isActive);
+                menuToggle.querySelector('i').className = isActive ? 'fas fa-times' : 'fas fa-bars';
             });
 
-            // Close menu when a link is clicked (optional)
+            // Close menu when a link is clicked
             navLinks.querySelectorAll('a').forEach(link => {
                 link.addEventListener('click', () => {
                     if (navLinks.classList.contains('active')) {
                         navLinks.classList.remove('active');
                         menuToggle.setAttribute('aria-expanded', 'false');
+                        menuToggle.querySelector('i').className = 'fas fa-bars';
                     }
+                     // Optional: Update active state indicator on click
+                     document.querySelectorAll('#main-nav a').forEach(navLink => navLink.classList.remove('active'));
+                     link.classList.add('active');
                 });
             });
         }
 
+         // --- Active Nav Link on Scroll (Basic) ---
+         const sections = document.querySelectorAll('section[id]'); // Select sections with an ID
+         window.addEventListener('scroll', navHighlighter);
 
-        // --- Form Submission Handling (Basic Examples) ---
-        // NOTE: These forms need a backend server to actually process the data.
-        // This JS provides frontend feedback only.
+         function navHighlighter() {
+             let scrollY = window.pageYOffset;
+
+             sections.forEach(current => {
+                 const sectionHeight = current.offsetHeight;
+                 // Adjust offset calculation as needed (header height + buffer)
+                 const sectionTop = current.offsetTop - (varValue('--header-height') + 50);
+                 let sectionId = current.getAttribute('id');
+
+                 // Check if current scroll position is within the section
+                 if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                     document.querySelector('#main-nav a[href*=' + sectionId + ']').classList.add('active');
+                 } else {
+                      document.querySelector('#main-nav a[href*=' + sectionId + ']').classList.remove('active');
+                 }
+             });
+             // Special case for top of page
+             if (scrollY < sections[0].offsetTop - (varValue('--header-height') + 50)) {
+                  document.querySelectorAll('#main-nav a').forEach(navLink => navLink.classList.remove('active'));
+                  document.querySelector('#main-nav a[href*="hero"]').classList.add('active');
+             }
+         }
+         // Helper to get CSS variable value
+          function varValue(name) {
+            return parseInt(getComputedStyle(document.documentElement).getPropertyValue(name)) || 0;
+          }
+
+
+        // --- Form Submission Handling (Frontend Feedback Only) ---
+        // REMINDER: Backend needed for actual data processing.
 
         const contactForm = document.getElementById('contactForm');
         const contactConfirmation = document.getElementById('contact-confirmation');
 
         if (contactForm && contactConfirmation) {
             contactForm.addEventListener('submit', function(event) {
-                event.preventDefault(); // Prevent the default form submission
-
-                // Basic validation (can be expanded)
-                const name = document.getElementById('name').value;
-                const email = document.getElementById('email').value;
-                const message = document.getElementById('message').value;
-
-                if (name.trim() === '' || email.trim() === '' || message.trim() === '') {
-                    alert('Please fill in all required fields.');
-                    return;
-                }
-
-                // --- Replace this with actual AJAX submission to your backend ---
+                event.preventDefault();
+                // --- Replace with AJAX/fetch to backend ---
                 console.log('Contact Form Submitted (Simulated)');
-                console.log('Name:', name);
-                console.log('Email:', email);
-                console.log('Subject:', document.getElementById('subject').value);
-                console.log('Message:', message);
-
-                // Display a confirmation message
-                contactConfirmation.textContent = 'Thank you for your message! We will get back to you soon.';
+                contactConfirmation.textContent = 'Thank you! Your inquiry has been sent.';
                 contactConfirmation.style.display = 'block';
-                contactForm.reset(); // Clear the form
-
-                // Hide confirmation after a few seconds
-                setTimeout(() => {
-                    contactConfirmation.style.display = 'none';
-                }, 5000);
-                // -----------------------------------------------------------------
+                contactForm.reset();
+                setTimeout(() => { contactConfirmation.style.display = 'none'; }, 5000);
+                // --- End of backend replacement ---
             });
         }
 
         const bookingForm = document.getElementById('bookingForm');
         const bookingConfirmation = document.getElementById('booking-confirmation');
-        const bookingDateInput = document.getElementById('booking-date');
+        const bookingPrefDateInput = document.getElementById('booking-pref-date');
+        const bookingDobInput = document.getElementById('booking-dob'); // DOB input
 
-        if (bookingForm && bookingConfirmation && bookingDateInput) {
-             // Set minimum date for booking to today
+        if (bookingForm && bookingConfirmation && bookingPrefDateInput && bookingDobInput) {
+            // Set minimum date for preferred appointment date
             const today = new Date().toISOString().split('T')[0];
-            bookingDateInput.setAttribute('min', today);
+            bookingPrefDateInput.setAttribute('min', today);
+
+             // Set maximum date for Date of Birth (cannot be in the future)
+            bookingDobInput.setAttribute('max', today);
 
 
             bookingForm.addEventListener('submit', function(event) {
-                event.preventDefault(); // Prevent the default form submission
-
-                 // Basic validation
-                 const name = document.getElementById('booking-name').value;
-                 const phone = document.getElementById('booking-phone').value;
-                 const service = document.getElementById('booking-service').value;
-                 const date = document.getElementById('booking-date').value;
-                 const time = document.getElementById('booking-time').value;
-
-                 if (name.trim() === '' || phone.trim() === '' || service === '' || date === '' || time === '') {
-                    alert('Please fill in all required booking fields.');
-                    return;
-                 }
-
-                // --- Replace this with actual AJAX submission to your backend ---
+                event.preventDefault();
+                 // --- Replace with AJAX/fetch to backend ---
                 console.log('Booking Request Submitted (Simulated)');
-                console.log('Name:', name);
-                console.log('Phone:', phone);
-                console.log('Service:', service);
-                console.log('Date:', date);
-                console.log('Time:', time);
-                console.log('Notes:', document.getElementById('booking-notes').value);
-
-                // Display a confirmation message
-                bookingConfirmation.textContent = 'Thank you! Your booking request has been sent. We will contact you shortly to confirm.';
+                bookingConfirmation.textContent = 'Thank you! Your appointment request has been submitted. We will contact you soon to confirm.';
                 bookingConfirmation.style.display = 'block';
-                bookingForm.reset(); // Clear the form
-                 bookingDateInput.setAttribute('min', today); // Reset min date after form reset
-
-                // Hide confirmation after a few seconds
-                setTimeout(() => {
-                    bookingConfirmation.style.display = 'none';
-                }, 7000);
-                 // -----------------------------------------------------------------
+                bookingForm.reset();
+                bookingPrefDateInput.setAttribute('min', today); // Re-apply min date
+                bookingDobInput.setAttribute('max', today); // Re-apply max date
+                setTimeout(() => { bookingConfirmation.style.display = 'none'; }, 7000);
+                // --- End of backend replacement ---
             });
         }
 
 
-        // --- Footer: Update Copyright Year Dynamically ---
+        // --- Footer: Update Copyright Year ---
         const currentYearSpan = document.getElementById('current-year');
         if (currentYearSpan) {
             currentYearSpan.textContent = new Date().getFullYear();
         }
 
-        // --- Initialize Slideshow on Page Load ---
-        document.addEventListener('DOMContentLoaded', () => {
-             if (document.getElementsByClassName("slide").length > 0) {
-                 showSlides(); // Start the slideshow automatically
-             }
-        });
+        // Initial highlight check on load
+        document.addEventListener('DOMContentLoaded', navHighlighter);
 
     </script>
 
